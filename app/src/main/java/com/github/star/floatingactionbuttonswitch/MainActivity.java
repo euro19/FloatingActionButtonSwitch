@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.wangjie.rapidfloatingactionbutton.RapidFloatingActionButton;
 import com.wangjie.rapidfloatingactionbutton.listener.OnRapidFloatingButtonGroupListener;
@@ -21,6 +22,7 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity implements OnRapidFloatingButtonGroupListener {
 
+    private static final String TAG = "MainActivity";
     @Bind(R.id.rfab_group_sample_pts)
     PagerTabStrip mRfabGroupSamplePts;
     @Bind(R.id.rfab_group_sample_vp)
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements OnRapidFloatingBu
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
+                Log.e(TAG, "position == " + position);
                 mRfabGroupSampleRfabg.setSection(position);
             }
         });
